@@ -53,7 +53,7 @@ ApplicationWindow {
     property var aeflock: "AEFLockOff"
 
 
-    property var gps_icon_source: settings.gpsOn ? "icons/gpsOn.svg" : "icons/gpsOff.svg"
+    property var gps_icon_source: settings.gpsOn ? "mark-location-symbolic" : "location-services-disabled-symbolic"
     property var locationAvailable: 0
 
     function openPopup(title, body, buttons, data) {
@@ -1073,7 +1073,7 @@ ApplicationWindow {
 
                     height: width
                     anchors.fill: parent
-                    icon.source: window.aeflock === "AEFLockOn" ? "icons/AEFLockOn.svg" : "icons/AEFLockOff.svg"
+                    icon.name: window.aeflock === "AEFLockOn" ? "changes-prevent-symbolic" : "changes-allow-symbolic"
                     icon.height: parent.height / 1.5
                     icon.width: parent.width / 1.5
                     icon.color: "white"
@@ -1349,7 +1349,6 @@ ApplicationWindow {
                                     enabled: cslate.state === "PhotoCapture" && !mediaView.visible
                                     icon.name: preCaptureTimer.running ? "" : configBar.currIndex < 1 ? "window-close-symbolic" : ""
                                     icon.source: preCaptureTimer.running ? "" : configBar.currIndex > 0 ? "icons/timer.svg" : ""
-
                                     icon.color: "white"
                                     icon.width: shutterBtnFrame.width - 10
                                     icon.height: shutterBtnFrame.height - 10
@@ -1671,7 +1670,7 @@ ApplicationWindow {
                 }
 
                 Button {
-                    icon.source: window.gps_icon_source
+                    icon.name: window.gps_icon_source
                     icon.height: configBarDrawer.height * 0.6
                     icon.width: configBarDrawer.width * 0.08
                     icon.color: settings.locationAvailable === 1 ? "white" : "grey"
@@ -1685,7 +1684,7 @@ ApplicationWindow {
                         target: fileManager
 
                         function onGpsDataReady() {
-                            window.gps_icon_source = "icons/gpsOn.svg";
+                            window.gps_icon_source = "mark-location-symbolic";
                             window.locationAvailable = 1;
                         }
                     }
@@ -1697,7 +1696,7 @@ ApplicationWindow {
                             fileManager.turnOnGps();
                         } else {
                             fileManager.turnOffGps();
-                            window.gps_icon_source = "icons/gpsOff.svg";
+                            window.gps_icon_source = "location-services-disabled-symbolic";
                             window.locationAvailable = 0;
                         }
                     }
@@ -1706,7 +1705,7 @@ ApplicationWindow {
                         target: fileManager
 
                         function onGpsDataReady() {
-                            window.gps_icon_source = "icons/gpsOn.svg";
+                            window.gps_icon_source = "mark-location-symbolic";
                             window.locationAvailable = 1;
                         }
                     }

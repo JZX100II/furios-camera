@@ -1,20 +1,13 @@
 <RCC>
     <qresource prefix="/icons/">
-        <file>shutter.svg</file>
         <file>timer.svg</file>
-        <file>qrc.svg</file>
-        <file>gpsOn.svg</file>
-        <file>gpsOff.svg</file>
         <file>menu.svg</file>
         <file>aspectRatioMenu.svg</file>
         <file>rotateCamera.svg</file>
-        <file>timer.svg</file>
         <file>flashAuto.svg</file>
         <file>flashOff.svg</file>
         <file>flashOn.svg</file>
         <file>cameraState.svg</file>
         <file>videoState.svg</file>
-        <file>AEFLockOn.svg</file>
-        <file>AEFLockOff.svg</file>
     </qresource>
 </RCC>
